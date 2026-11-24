@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riwayat Perasaan | Moodly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">✿ Moodly</a>
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="diary.html">Diary</a>
+    <a href="historyt.html" class="active">Riwayat</a>
+  </nav>
+</header>
+
+<main class="main-container">
+
+  <section class="page-heading">
+    <span class="eyebrow">SETIAP PERASAAN PUNYA CERITA</span>
+    <h1>Perjalanan <span>perasaanmu.</span></h1>
+    <p>Semua cerita dan perasaan yang pernah kamu simpan ada di sini.</p>
+  </section>
+
+  <div id="pesanBerhasil" class="success-banner" hidden>
+    ♡ Perasaanmu berhasil disimpan! Terima kasih sudah bercerita hari ini.
+  </div>
+
+  <section class="stats-list">
+    <div class="stat-box">
+      <span class="stat-emoji">📖</span>
+      <h2 id="totalCatatan">0</h2>
+      <p>Total Catatan</p>
+    </div>
+
+    <div class="stat-box">
+      <span class="stat-emoji">🌷</span>
+      <h2 id="moodTerbanyak">-</h2>
+      <p>Perasaan Paling Sering</p>
+    </div>
+  </section>
+
+  <section class="history-section">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow">KENANGAN KECILMU</span>
+        <h2>Riwayat Perasaan</h2>
+      </div>
+
+      <a href="diary.html" class="button button-small">+ Tambah Catatan</a>
+    </div>
+
+    <div id="semuaCatatan" class="entries"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <span>♡ Moodly — Diary Perasaan</span>
+  <span>Setiap hari adalah cerita baru.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
