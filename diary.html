@@ -1,111 +1,88 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diary Saya | Moodly</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary - Moodly</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="navbar">
-  <a href="index.html" class="logo">✿ Moodly</a>
-  <nav>
-    <a href="index.html">Beranda</a>
-    <a href="diary.html" class="active">Diary</a>
-    <a href="historyt.html">Riwayat</a>
-  </nav>
-</header>
+<nav class="navbar">
+    <a href="index.html" class="logo">Moodly ♡</a>
+    <div class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="diary.html">Diary</a>
+        <a href="historyt.html">Riwayat</a>
+    </div>
+</nav>
 
-<main class="main-container">
+<main class="diary-container">
 
-  <section class="page-heading">
-    <span class="eyebrow">WAKTU UNTUK DIRIMU SENDIRI</span>
-    <h1>Bagaimana perasaanmu <span>hari ini?</span></h1>
-    <p>Pilih emoji yang menggambarkan perasaanmu hari ini.</p>
-    <div id="tanggalHariIni" class="date-label"></div>
-  </section>
+    <div class="diary-header">
+        <p class="tagline">DIARY HARIAN</p>
+        <h1>Bagaimana perasaanmu <span>hari ini?</span></h1>
+        <p>Pilih perasaanmu dan ceritakan apa yang sedang kamu alami.</p>
+    </div>
 
-  <section class="diary-box">
+    <div class="mood-grid">
 
-    <h2>Apa yang kamu rasakan?</h2>
-    <p class="subtitle">Pilih salah satu perasaan di bawah ini ♡</p>
+        <button class="mood-button" type="button" data-mood="Senang" data-emoji="😄">
+            <span>😄</span><small>Senang</small>
+        </button>
 
-    <div class="mood-list">
+        <button class="mood-button" type="button" data-mood="Bahagia" data-emoji="🥰">
+            <span>🥰</span><small>Bahagia</small>
+        </button>
 
-      <button class="mood-button" type="button" data-mood="Senang" data-emoji="😄">
-        <span>😄</span>
-        <small>Senang</small>
-      </button>
+        <button class="mood-button" type="button" data-mood="Tenang" data-emoji="😌">
+            <span>😌</span><small>Tenang</small>
+        </button>
 
-      <button class="mood-button" type="button" data-mood="Bahagia" data-emoji="🥰">
-        <span>🥰</span>
-        <small>Bahagia</small>
-      </button>
+        <button class="mood-button" type="button" data-mood="Sedih" data-emoji="😔">
+            <span>😔</span><small>Sedih</small>
+        </button>
 
-      <button class="mood-button" type="button" data-mood="Tenang" data-emoji="😌">
-        <span>😌</span>
-        <small>Tenang</small>
-      </button>
+        <button class="mood-button" type="button" data-mood="Lelah" data-emoji="😫">
+            <span>😫</span><small>Lelah</small>
+        </button>
 
-      <button class="mood-button" type="button" data-mood="Sedih" data-emoji="😔">
-        <span>😔</span>
-        <small>Sedih</small>
-      </button>
-
-      <button class="mood-button" type="button" data-mood="Lelah" data-emoji="😫">
-        <span>😫</span>
-        <small>Lelah</small>
-      </button>
-
-      <button class="mood-button" type="button" data-mood="Kesal" data-emoji="😡">
-        <span>😡</span>
-        <small>Kesal</small>
-      </button>
+        <button class="mood-button" type="button" data-mood="Kesal" data-emoji="😡">
+            <span>😡</span><small>Kesal</small>
+        </button>
 
     </div>
 
-    <div class="form-group">
-      <label for="ceritaMood">Ceritakan harimu</label>
+    <div class="diary-box">
+        <label for="ceritaMood">Ceritamu hari ini</label>
 
-      <textarea
-        id="ceritaMood"
-        maxlength="500"
-        placeholder="Tuliskan apa yang kamu rasakan hari ini di sini..."
-      ></textarea>
+        <textarea id="ceritaMood"
+            placeholder="Tuliskan apa yang kamu rasakan hari ini..."></textarea>
 
-      <div class="character-counter">
-        <span id="jumlahKarakter">0</span>/500 karakter
-      </div>
+        <div class="char-count">
+            <span id="jumlahKarakter">0</span> karakter
+        </div>
+
+        <p id="pesan" class="pesan"></p>
+
+        <button id="tombolSimpan" type="button" class="btn btn-full">
+            Simpan Cerita ♡
+        </button>
     </div>
 
-    <button type="button" id="tombolSimpan" class="button button-full">
-      Simpan Perasaanku ♡
-    </button>
+    <section class="recent-section">
+        <div class="section-heading">
+            <h2>Catatan Terakhir</h2>
+            <a href="historyt.html">Lihat semua →</a>
+        </div>
 
-    <p id="pesan" class="message"></p>
-
-  </section>
-
-  <section class="recent-section">
-    <div class="section-header">
-      <div>
-        <span class="eyebrow">CERITA YANG KAMU SIMPAN</span>
-        <h2>Catatan Terbaru</h2>
-      </div>
-
-      <a href="historyt.html" class="text-link">Lihat semua →</a>
-    </div>
-
-    <div id="catatanTerbaru" class="entries"></div>
-  </section>
+        <div id="catatanTerbaru"></div>
+    </section>
 
 </main>
 
-<footer class="footer">
-  <span>♡ Moodly — Diary Perasaan</span>
-  <span>Terima kasih telah meluangkan waktu untuk dirimu.</span>
+<footer>
+    <p>Moodly ♡ — Terima kasih sudah meluangkan waktu untuk dirimu.</p>
 </footer>
 
 <script src="script.js"></script>
